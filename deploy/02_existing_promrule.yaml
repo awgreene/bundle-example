@@ -1,0 +1,19 @@
+
+apiVersion: monitoring.coreos.com/v1
+kind: PrometheusRule
+metadata:
+  name: my-prometheusrule
+  namespace: olm
+  labels:
+    prometheus: alert-rules
+    role: alert-rules
+spec:
+  groups:
+    - name: existing.promrule
+      rules:
+        - alert: FailingOperator
+          annotations:
+            message: Failed to install Operator {{ $labels.name }} version {{ $labels.version }}. Reason-{{ $labels.reason }}
+          expr: csv_abnormal{phase="Failed"}
+          labels:
+            severity: info

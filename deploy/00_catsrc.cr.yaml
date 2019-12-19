@@ -1,0 +1,8 @@
+apiVersion: operators.coreos.com/v1alpha1
+kind: CatalogSource
+metadata:
+  name: my-catalogsource
+  namespace: olm
+spec:
+  sourceType: grpc
+  image: quay.io/agreene/bundle-index:my-example

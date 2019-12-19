@@ -27,7 +27,15 @@ spec:
     Alerting rules are attached to groups of containers instead of individual instances, which is ideal for the highly dynamic nature of container deployment.
 
   keywords: ['prometheus', 'monitoring', 'tsdb', 'alerting']
-
+  installModes:
+  - type: OwnNamespace
+    supported: true
+  - type: SingleNamespace
+    supported: true
+  - type: MultiNamespace
+    supported: true
+  - type: AllNamespaces
+    supported: true
   maintainers:
   - name: CoreOS, Inc
     email: support@coreos.com
