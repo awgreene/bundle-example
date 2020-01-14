@@ -4,8 +4,8 @@ metadata:
   name: my-subscription
   namespace: olm
 spec:
-  channel: preview
-  name: prometheus
+  channel: singlenamespace-alpha
+  name: etcd
   source: my-catalogsource
   sourceNamespace: olm
   installPlanApproval: Automatic
