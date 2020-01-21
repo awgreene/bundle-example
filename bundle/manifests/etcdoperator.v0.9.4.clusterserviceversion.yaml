@@ -26,6 +26,13 @@ metadata:
   namespace: placeholder
 spec:
   customresourcedefinitions:
+    required:
+    - description: A Prometheus Rule configures groups of sequentially evaluated recording
+        and alerting rules.
+      displayName: Prometheus Rule
+      kind: PrometheusRule
+      name: prometheusrules.monitoring.coreos.com
+      version: v1
     owned:
     - description: Represents a cluster of etcd nodes.
       displayName: etcd Cluster

@@ -2,8 +2,8 @@ build:
 	docker build -t quay.io/agreene/bundle-example:$(TAG) -f ./dockerfiles/prom.bundle.Dockerfile .
 	docker push quay.io/agreene/bundle-example:$(TAG)
 	opm index add --permissive --generate -b quay.io/agreene/bundle-example:$(TAG)
-	docker build -t quay.io/agreene/bundle-index:$(TAG) -f ./dockerfiles/prom.index.Dockerfile .
-	docker push quay.io/agreene/bundle-index:$(TAG)
+	docker build -t quay.io/olmtest/catsrc_dynamic_resources:$(TAG) -f ./dockerfiles/prom.index.Dockerfile .
+	docker push quay.io/olmtest/catsrc_dynamic_resources:$(TAG)
 	$(MAKE) clean
 
 clean:

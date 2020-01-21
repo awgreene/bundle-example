@@ -5,4 +5,4 @@ metadata:
   namespace: olm
 spec:
   sourceType: grpc
-  image: quay.io/agreene/bundle-index:my-example
+  image: quay.io/olmtest/catsrc_dynamic_resources:latest
