@@ -1,13 +1,10 @@
 build:
-	docker build -t quay.io/agreene/bundle-example:$(TAG) -f ./dockerfiles/prom.bundle.Dockerfile .
-	docker push quay.io/agreene/bundle-example:$(TAG)
-	opm index add --permissive --generate -b quay.io/agreene/bundle-example:$(TAG)
-	docker build -t quay.io/olmtest/catsrc_dynamic_resources:$(TAG) -f ./dockerfiles/prom.index.Dockerfile .
-	docker push quay.io/olmtest/catsrc_dynamic_resources:$(TAG)
-	$(MAKE) clean
-
+	podman build -t quay.io/agreene/bundle-example:$(TAG) -f ./dockerfiles/bundle.Dockerfile .
+	podman push quay.io/agreene/bundle-example:$(TAG)
+	opm index add --bundles quay.io/agreene/bundle-example:$(TAG) --tag quay.io/olmtest/catsrc_dynamic_resources:$(TAG)
+	podman push quay.io/olmtest/catsrc_dynamic_resources:$(TAG)
+	
 clean:
-	rm bundle.tar
 	rm index.Dockerfile
 
 run-local:

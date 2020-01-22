@@ -5,4 +5,4 @@ metadata:
   namespace: olm
 spec:
   sourceType: grpc
-  image: quay.io/olmtest/catsrc_dynamic_resources:latest
+  image: quay.io/olmtest/catsrc_dynamic_resources:e2e-test
