@@ -1,0 +1,13 @@
+apiVersion: operators.coreos.com/v1alpha1
+kind: CatalogSource
+metadata:
+  labels:
+    olm.catalogSource: kaili-catalog
+  name: kiali-7v9j2
+  namespace: test
+spec:
+  icon:
+    base64data: ""
+    mediatype: ""
+  image: quay.io/olmtest/installplan_e2e-registry-image:latest
+  sourceType: grpc
